@@ -172,6 +172,7 @@ async function addRepo(helm) {
       "add",
       repoAlias,
       repo,
+      "--create-namespace"
     ]
 
     if (repoUsername) args.push(`--username=${repoUsername}`);
