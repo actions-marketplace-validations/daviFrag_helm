@@ -64,6 +64,7 @@ function getValues(values) {
   if (typeof values === "object") {
     return JSON.stringify(values);
   }
+  core.info(values);
   return values;
 }
 
