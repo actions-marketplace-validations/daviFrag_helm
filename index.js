@@ -242,7 +242,7 @@ async function deploy(helm) {
 
   // args.push("--values=./values-override.yml");
 
-  values.split('\n').forEach(value => args.push(`--values=${value}`)
+  values.split('\n').forEach(value => args.push(`--values=${value}`));
 
   // Special behaviour is triggered if the track is labelled 'canary'. The
   // service and ingress resources are disabled. Access to the canary
