@@ -171,8 +171,7 @@ async function addRepo(helm) {
       "repo",
       "add",
       repoAlias,
-      repo,
-      "--create-namespace"
+      repo
     ]
 
     if (repoUsername) args.push(`--username=${repoUsername}`);
@@ -231,6 +230,7 @@ async function deploy(helm) {
     "--install",
     "--wait",
     `--namespace=${namespace}`,
+    "--create-namespace"
   ];
 
   if (dryRun) args.push("--dry-run");
