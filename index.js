@@ -240,7 +240,7 @@ async function deploy(helm) {
 
   valueFiles.forEach(f => args.push(`--values=${f}`));
 
-  args.push("--values=./values.yml");
+  args.push("--values=./values-override.yml");
 
   // Special behaviour is triggered if the track is labelled 'canary'. The
   // service and ingress resources are disabled. Access to the canary
@@ -254,7 +254,7 @@ async function deploy(helm) {
     args.push("--atomic");
   }
 
-  await writeFile("./values.yml", values);
+  await writeFile("./values-override.yml", values);
 
   core.debug(`env: KUBECONFIG="${process.env.KUBECONFIG}"`);
 
